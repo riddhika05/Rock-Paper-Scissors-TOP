@@ -1,6 +1,6 @@
 body{
    font-family: Verdana, Geneva, Tahoma, sans-serif;
-   background-image:linear-gradient(#FB7185,white);
+   background-image:linear-gradient(#717ffb,white);
    background-size: cover;
    background-repeat: no-repeat;
    min-height: 100vh;
@@ -20,9 +20,9 @@ body{
   padding-top: 50px;
   padding-bottom: 50px;
   margin-top: 40px;
-  border-radius: 10px;
+  border-radius: 25px;
 }
-.Round
+.Round ,.weapon 
 {
     width:500px;
     color: #BE185D;
@@ -32,4 +32,15 @@ body{
     font-style: normal;
     background-color:rgba(255,255,255, 0.5) ;
 
+}
+.weapon{
+    margin: 0 auto;
+    margin-top: 80px;
+    color: rgb(3, 2, 41);
+    font-size:70px;
+    width: 700px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 25px;
+    padding:40px;
 }
