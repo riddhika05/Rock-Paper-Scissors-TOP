@@ -68,7 +68,9 @@ function finalScore() {
             result.textContent = "You lose !";
         else
             result.textContent = "Tie!";
-        location.reload();
+            setTimeout(function(){
+                location.reload();
+            }, 2000);
 
 
 }
