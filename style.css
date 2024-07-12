@@ -1,0 +1,21 @@
+body{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   background-color:#FBCFE8;
+} 
+.heading
+{
+  font-size: 200px;
+  font-weight: 800;
+   color: #EC4899;
+  text-align: center;
+  background-color:rgba(255,255,255, 0.6);
+  font-style: italic;
+  width: 2500px;
+  display:flex;
+  margin: 0 auto;
+  padding-left:500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
