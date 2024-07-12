@@ -1,5 +1,6 @@
 let HumanScore = 0;
 let CompScore = 0;
+let round = 0;
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 100);
     if (choice < 33)
@@ -10,53 +11,64 @@ function getComputerChoice() {
         else
             return "Paper";
 }
-function getHumanChoice() {
-    let choice = prompt("Enter Rock , Paper or Scissors");
-    return choice;
-}
+
+
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
-    if (humanChoice === computerChoice)
-       { console.log("Tie in this round !");
-        HumanScore ++;
-        CompScore ++;
-       }
+    if (humanChoice === computerChoice) {
+        console.log("Tie in this round !");
+        HumanScore++;
+        CompScore++;
+    }
 
     else
-        if (humanChoice === "rock" && computerChoice === "scissor" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "scissor" && computerChoice === "paper")
-            {console.log("Congrats! " + humanChoice + " beats " + computerChoice);
-              HumanScore++;
-            }
-        else
-           { console.log("You Lose " + computerChoice + " beats " + humanChoice);
-              CompScore++;
-           }
-        const hscore=document.querySelector(".hscore");
-        const cscore=document.querySelector(".cscore");
-        hscore.innerHTML=HumanScore;
-        cscore.innerHTML=CompScore;
+        if (humanChoice === "rock" && computerChoice === "scissor" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "scissor" && computerChoice === "paper") {
+            console.log("Congrats! " + humanChoice + " beats " + computerChoice);
+            HumanScore++;
+        }
+        else {
+            console.log("You Lose " + computerChoice + " beats " + humanChoice);
+            CompScore++;
+        }
+    const hscore = document.querySelector(".hscore");
+    const cscore = document.querySelector(".cscore");
+    hscore.innerHTML = HumanScore;
+    cscore.innerHTML = CompScore;
+    round++;
+    const roundn = document.querySelector("span");
+    roundn.innerHTML = round;
+    if (round === 5)
+        finalScore();
 
 }
 
-function playGame()
-{   let round=1;
-    while(round!=6)
-        {   const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();
-            playRound(humanSelection, computerSelection);
-            const roundn=document.querySelector("span");
-            roundn.innerHTML=round;
-            round++;
-        }
-        if(HumanScore>CompScore)
-            console.log("You win !");
+function playGame() {
+    const computerSelection = getComputerChoice();
+    const rock = document.querySelector("#rock");
+    const paper = document.querySelector("#paper");
+    const scissor = document.querySelector("#scissors");
+    rock.addEventListener('click', () => {
+        playRound('rock', computerSelection);
+    });
+    paper.addEventListener('click', () => {
+        playRound('paper', computerSelection);
+    });
+    scissor.addEventListener('click', () => {
+        playRound('scissors', computerSelection);
+    });
+    console.log(round);
+}
+function finalScore() {
+   const result=document.querySelector(".finalResult");
+    if (HumanScore > CompScore)
+        result.textContent = "You win !";
+    else
+        if (HumanScore < CompScore)
+            result.textContent = "You lose !";
         else
-        if(HumanScore<CompScore)
-          console.log("You lose !");
-        else
-          console.log("Tie!");
-         
+            result.textContent = "Tie!";
+
 
 }
 playGame();
