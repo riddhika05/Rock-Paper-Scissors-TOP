@@ -36,11 +36,13 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame()
-{   let round=0;
-    while(round!=5)
+{   let round=1;
+    while(round!=6)
         {   const humanSelection = getHumanChoice();
             const computerSelection = getComputerChoice();
             playRound(humanSelection, computerSelection);
+            const roundn=document.querySelector("span");
+            roundn.innerHTML=round;
             round++;
         }
         if(HumanScore>CompScore)
