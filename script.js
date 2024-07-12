@@ -1,6 +1,7 @@
 let HumanScore = 0;
 let CompScore = 0;
 let round = 0;
+const roundRes=document.querySelector(".roundRes");
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 100);
     if (choice < 33)
@@ -17,18 +18,18 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
     if (humanChoice === computerChoice) {
-        console.log("Tie in this round !");
+        roundRes.textContent="Tie in this round !";
         HumanScore++;
         CompScore++;
     }
 
     else
         if (humanChoice === "rock" && computerChoice === "scissor" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "scissor" && computerChoice === "paper") {
-            console.log("Congrats! " + humanChoice + " beats " + computerChoice);
+            roundRes.textContent="Congrats! " + humanChoice + " beats " + computerChoice;
             HumanScore++;
         }
         else {
-            console.log("You Lose " + computerChoice + " beats " + humanChoice);
+             roundRes.textContent="You Lose " + computerChoice + " beats " + humanChoice;
             CompScore++;
         }
     const hscore = document.querySelector(".hscore");
