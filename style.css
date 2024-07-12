@@ -30,7 +30,7 @@ body{
     font-size: 100px;
     padding: 80px;
     font-style: normal;
-    background-color:rgba(255,255,255, 0.5) ;
+    background-color:rgba(255,255,255, 0.4) ;
 
 }
 .weapon{
@@ -43,4 +43,19 @@ body{
     text-align: center;
     border-radius: 25px;
     padding:40px;
+}
+.result,.container
+{   margin-top:50px;
+    text-align: center;
+    font-size:100px;
+    font-weight: bold;
+}
+.container
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1000px;
+    font-size:80px;
+    
 }

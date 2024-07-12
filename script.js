@@ -32,6 +32,10 @@ function playRound(humanChoice, computerChoice) {
            { console.log("You Lose " + computerChoice + " beats " + humanChoice);
               CompScore++;
            }
+        const hscore=document.querySelector(".hscore");
+        const cscore=document.querySelector(".cscore");
+        hscore.innerHTML=HumanScore;
+        cscore.innerHTML=CompScore;
 
 }
 
