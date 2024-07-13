@@ -6,6 +6,8 @@ const himg=document.querySelector(".himg");
 const cimg=document.querySelector(".cimg");
 const cimage=document.createElement("img");
 const himage=document.createElement("img");
+cimage.src="/home/riddhika05/Desktop/repos/Rock-Paper-Scissors-TOP/Ques.avif";
+himage.src="/home/riddhika05/Desktop/repos/Rock-Paper-Scissors-TOP/Ques.avif";
 himg.appendChild(himage);
 cimg.appendChild(cimage);
 
