@@ -12,11 +12,11 @@ himg.appendChild(himage);
 cimg.appendChild(cimage);
 
 function getComputerChoice() {
-    let choice = Math.floor(Math.random() * 100);
-    if (choice < 33)
+    let choice = Math.floor(Math.random() * 3);
+    if (choice ==0)
         return "Rock";
     else
-        if (choice > 66)
+        if (choice ==1)
             return "Scissor";
         else
             return "Paper";
@@ -70,18 +70,17 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    const computerSelection = getComputerChoice();
     const rock = document.querySelector("#rock");
     const paper = document.querySelector("#paper");
     const scissor = document.querySelector("#scissors");
     rock.addEventListener('click', () => {
-        playRound('rock', computerSelection);
+        playRound('rock', getComputerChoice());
     });
     paper.addEventListener('click', () => {
-        playRound('paper', computerSelection);
+        playRound('paper', getComputerChoice());
     });
     scissor.addEventListener('click', () => {
-        playRound('scissors', computerSelection);
+        playRound('scissors',getComputerChoice());
     });
     console.log(round);
 }
