@@ -109,3 +109,9 @@ img {
     font-weight: bold;
     color:rgb(9, 9, 73) ;
 }
+.vsBlock
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

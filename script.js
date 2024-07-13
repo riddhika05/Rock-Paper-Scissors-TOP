@@ -2,6 +2,13 @@ let HumanScore = 0;
 let CompScore = 0;
 let round = 0;
 const roundRes=document.querySelector(".roundRes");
+const himg=document.querySelector(".himg");
+const cimg=document.querySelector(".cimg");
+const cimage=document.createElement("img");
+const himage=document.createElement("img");
+himg.appendChild(himage);
+cimg.appendChild(cimage);
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 100);
     if (choice < 33)
@@ -17,6 +24,22 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
+    if(computerChoice==="rock")
+        cimage.src="/home/riddhika05/Desktop/repos/Rock-Paper-Scissors-TOP/ROCK.avif";
+    else
+    if(computerChoice==="paper")
+        cimage.src="/home/riddhika05/Desktop/repos/Rock-Paper-Scissors-TOP/PAPER.avif";
+    else 
+     if(computerChoice==="scissors")
+        cimage.src="/home/riddhika05/Desktop/repos/Rock-Paper-Scissors-TOP/SCISSORS.avif";
+     if(humanChoice==="rock")
+        himage.src="/home/riddhika05/Desktop/repos/Rock-Paper-Scissors-TOP/ROCK.avif";
+    else
+    if(humanChoice==="paper")
+        himage.src="/home/riddhika05/Desktop/repos/Rock-Paper-Scissors-TOP/PAPER.avif";
+    else 
+     if(humanChoice==="scissors")
+        himage.src="/home/riddhika05/Desktop/repos/Rock-Paper-Scissors-TOP/SCISSORS.avif";
     if (humanChoice === computerChoice) {
         roundRes.textContent="Tie in this round !";
         HumanScore++;
